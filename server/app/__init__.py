@@ -25,6 +25,8 @@ def create_app(config_name):
     
     from app.api_v1 import api 
     app.register_blueprint(api)
+    
+    
 
 
     return app  
