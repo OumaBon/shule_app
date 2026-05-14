@@ -2,6 +2,7 @@ from app import db, bcrypt
 from datetime import datetime
 from sqlalchemy import UniqueConstraint
 
+
 class User(db.Model):
     __tablename__ = 'users'
     
