@@ -30,7 +30,8 @@ class SchoolClass(db.Model):
     @property
     def current_enrollment(self) -> int:
         """Get current number of students in the class"""
-        return self.students.filter_by(is_active=True).count() if hasattr(self.students, 'filter_by') else len(self.students)
+        # FIX: Just count all students since Student model doesn't have is_active
+        return self.students.count()
     
     @property
     def available_seats(self) -> int:
